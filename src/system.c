@@ -365,16 +365,16 @@ void checkAllAccounts(struct User u)
                    r.amount,
                    r.accountType);
             if (strcmp(r.accountType,"saving") == 0){
-                printf("Interest rate 0.07%\n");
+                printf("Interest rate %lf every %d in the mounth\n", 0.07*r.amount,r.deposit.day);
             }
             if (strcmp(r.accountType,"fixed01") == 0){
-                printf("Interest rate 0.04%\n");
+                printf("Interest rate %lf at %d/%d/%d\n",0.04*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+1);
             }
             if (strcmp(r.accountType,"fixed02") == 0){
-                printf("Interest rate 0.05%\n");
+                printf("Interest rate %lf at %d/%d/%d\n",0.05*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+2);
             }
             if (strcmp(r.accountType,"fixed03") == 0){
-                printf("Interest rate 0.08%\n");
+                printf("Interest rate %lf at %d/%d/%d\n",0.08*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+3);
             }
             if (strcmp(r.accountType,"current") == 0){
                 printf("You will not get interests because the account is of type current.\n");
@@ -410,6 +410,21 @@ void checkAccount(struct User u, int account){
                    r.phone,
                    r.amount,
                    r.accountType);
+            if (strcmp(r.accountType,"saving") == 0){
+                printf("Interest rate %lf every %d in the mounth\n", 0.07*r.amount,r.deposit.day);
+            }
+            if (strcmp(r.accountType,"fixed01") == 0){
+                printf("Interest rate %lf at %d/%d/%d\n",0.04*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+1);
+            }
+            if (strcmp(r.accountType,"fixed02") == 0){
+                printf("Interest rate %lf at %d/%d/%d\n",0.05*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+2);
+            }
+            if (strcmp(r.accountType,"fixed03") == 0){
+                printf("Interest rate %lf at %d/%d/%d\n",0.08*r.amount,r.deposit.day, r.deposit.month, r.deposit.year+3);
+            }
+            if (strcmp(r.accountType,"current") == 0){
+                printf("You will not get interests because the account is of type current.\n");
+            }
         }
     }
     fclose(pf);
